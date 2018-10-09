@@ -1,0 +1,24 @@
+/* pages/end_video/end_video.wxss */
+.box{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: skyblue;
+}
+.jump{
+  width: 90rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  position: absolute;
+  color: #fff;
+  z-index: 999;
+  top: 20rpx;
+  right: 10rpx;
+  border: 1px solid #fff;
+  border-radius: 18rpx;
+}
+.myVideo{
+  width: 100%;
+  height: 100%;
+}

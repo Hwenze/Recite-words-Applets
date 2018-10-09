@@ -1,0 +1,26 @@
+<!--pages/extinct/extinct.wxml-->
+<view class='box-top'>
+  <view class='xl'>
+    <image src='../../images/xl.png'></image>
+    <span style="font-family:rockwell;">已消灭词汇</span>
+  </view>
+  <view class='sl'>
+    <span style="font-family:rockwell;">{{count}}个</span>
+  </view>
+</view>
+<!-- 内容 -->
+<view class='nr'>
+  <block wx:for='{{list}}'>
+    <ul>
+      <li data-id='{{item.id}}'>
+        <view class='vocabulary'>
+          <p style="font-family:rockwell;">{{item.word_name}}</p>
+        </view>
+        <view class='peas'></view>
+        <view class='explain'>
+          <p style="font-family:rockwell;">{{item.analyze}}</p>
+        </view>
+      </li>
+    </ul>
+  </block>
+</view>

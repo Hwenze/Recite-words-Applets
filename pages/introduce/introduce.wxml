@@ -1,0 +1,17 @@
+<!--pages/introduce/introduce.wxml-->
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class='box'>
+  <view class='section'></view>
+  <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+</view>
+<view class='box_button'>
+  <view>
+    <button class='bbox' open-type='contact'></button>
+    <text>如有疑问轻点一下</text>
+  </view>
+  <view>
+    <button class='bbox' open-type='contact'></button>
+    <text>英语秘籍猛击一下</text>
+  </view>
+  <image src='../../images/phone.png' bindtap='phone'></image>
+</view>

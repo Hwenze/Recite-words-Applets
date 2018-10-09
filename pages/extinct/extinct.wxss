@@ -1,0 +1,79 @@
+/* pages/extinct/extinct.wxss */
+.box-top{
+  width: 100%;
+  height: 80rpx;
+  background: #FFD200;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+}
+.xl{
+  width: 40%;
+  display: flex;
+  align-items: center;
+  margin-left: 3%;
+}
+.xl image{
+  width: 34rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.sl{
+  width: 14%;
+  float: left;
+  text-align: center;
+}
+/* 内容 */
+.nr{
+  padding: 10rpx 3%;
+  margin-top: 80rpx;
+}
+.nr ul li{
+  min-height: 120rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #F8F8F8;
+}
+.vocabulary{
+  width: 40%;
+  float: left;
+  margin-right: 1%;
+}
+.vocabulary p{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+
+}
+.peas{
+  width: 20%;
+  float: left;
+}
+.difficulty1{
+  width: 60rpx;
+  height: 55rpx;
+}
+.difficulty2{
+  width: 83rpx;
+  height: 55rpx;
+}
+.difficulty3{
+  width: 110rpx;
+  height: 55rpx;
+}
+.explain{
+  width: 39%;
+  float: left;
+}
+.explain p{
+  display: block;
+  font-size: 27rpx;
+  text-align: right;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}

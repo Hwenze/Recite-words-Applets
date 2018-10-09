@@ -1,0 +1,23 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/introduce/introduce",
+    "pages/test/test",
+    "pages/extinct/extinct",
+    "pages/result/result",
+    "pages/clock/clock",
+    "pages/end_video/end_video",
+    "pages/huan_video/huan_video",
+    "pages/nightmare/nightmare",
+    "pages/nightmare_list/nightmare_list",
+    "pages/subject/subject",
+    "pages/pronunciation/pronunciation",
+    "pages/choice/choice"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#67BD74",
+    "navigationBarTitleText": "檬查查听单词",
+    "navigationBarTextStyle":"black"
+  }
+}

@@ -1,0 +1,364 @@
+/**index.wxss**/
+.comprehensive{
+  width: 100%;
+  height: 50rpx;
+  background: #67BD74;
+}
+
+.box{
+  width: 100%;
+  height: 100%;
+  background: #FFD200;
+  background-size:100% 100%;
+  position: fixed;
+  display:flex;
+  display: -webkit-flex;
+  flex-direction:column;
+}
+
+.box_top{
+  width: 100%;
+  height: 360rpx;
+  background:#67BD74;
+  background-size:100% 100%;
+}
+.news{
+  width: 86%;
+  margin-left: 4%;
+  margin-right: 10%;
+}
+.xuanze{
+  width: 7%;
+  height: 60rpx;
+  margin-top: 10rpx;
+  position: absolute;
+  z-index: 10;
+}
+.xuanze image{
+  width: 100%;
+  height: 100%;
+}
+.xuanze text{
+  display: block;
+  width: 100rpx;
+  font-size: 30rpx;
+  color: #000;
+  margin: -62rpx 0 0 60rpx;
+  position: absolute;
+}
+.logo{
+  width: 50%;
+  height: 315rpx;
+  float: left;
+  margin-top: 22rpx;
+  margin-left: 65rpx;
+}
+.logo image{
+  width: 100%;
+  height: 315rpx;
+}
+.tiku{
+  width: 31%;
+  height: 280rpx;
+  position: absolute;
+  top: 16rpx;
+  right: 50rpx;
+  z-index: 11;
+}
+.tiku1{
+  width: 31%;
+  height: 280rpx;
+  position: absolute;
+  top: 66rpx;
+  right: 50rpx;
+  z-index: 11;
+}
+.ciku{
+  font-size:30rpx;
+  color:#000;
+  float: left;
+}
+.jieshi{
+  width:38rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  background: #FFD200;
+  border-radius:50%; 
+  font-size:30rpx;
+  color:#000;
+  float: left;
+  margin-top:2rpx; 
+  margin-left:8rpx; 
+  text-align: center;
+}
+.tiku image{
+  width: 221rpx;
+  height: 221rpx;
+  margin-top: 17rpx;
+}
+.tiku1 image{
+  width: 221rpx;
+  height: 221rpx;
+  margin-top: 17rpx;
+}
+.yy{
+  font-size: 81rpx;
+  text-align: center;
+  margin-top:-158rpx; 
+  font-family:Volter;
+  color: #FFD200;
+  letter-spacing:15rpx;
+  text-indent: 10rpx;
+  text-shadow: -2px -2px 1px #FFE04D;
+}
+/* 中间轮播 */
+.guodu{
+  width: 100%;
+  height: 50rpx;
+  background-size:100% 100%;
+  z-index: 2;
+}
+.guodu image{
+  position: absolute;
+  width: 100%;
+  height: 38rpx;
+}
+.lb{
+  width: 680rpx;
+  height: 50rpx;
+  position: absolute;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 30rpx;
+  box-shadow: 3rpx 3rpx 1rpx 1rpx #FFD200 inset;
+  background: #7FE78E;
+}
+.swiper_container {
+  height: 50rpx;
+  width: 95%;
+}
+.swiper_item {
+  font-size: 28rpx;
+  line-height: 53rpx;
+  text-align: center;
+  text-indent: 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 按钮 */
+.list{
+  width: 100%;
+}
+.list ul li{
+  width: 50%;
+  height: 270rpx;
+  float: left;
+  margin-top: 40rpx;
+}
+.list ul li image{
+  width: 270rpx;
+  height: 270rpx;
+  margin-left: 50rpx;
+}
+.list ul li:nth-child(1) image{
+  margin-left: 70rpx;
+}
+.list ul li:nth-child(3) image{
+  margin-left: 70rpx;
+}
+.list ul li:nth-child(5){
+  width: 100%;
+  height: 150rpx;
+}
+.list ul li:nth-child(5) image{
+  width: 80%;
+  height: 110rpx;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* 全面屏 */
+.pi{
+  width: 100%;
+}
+.pi ul li{
+  width: 50%;
+  height: 270rpx;
+  float: left;
+  margin-top: 80rpx;
+}
+.pi ul li image{
+  width: 270rpx;
+  height: 270rpx;
+  margin-left: 50rpx;
+}
+.pi ul li:nth-child(1) image{
+  margin-left: 70rpx;
+}
+.pi ul li:nth-child(3) image{
+  margin-left: 70rpx;
+}
+.pi ul li:nth-child(5){
+  width: 100%;
+  height: 150rpx;
+}
+.pi ul li:nth-child(5) image{
+  width: 80%;
+  height: 110rpx;
+  margin-top: 10rpx;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* 模板 */
+.moba{
+  position: absolute;
+  z-index: 997;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius:50%;
+  top: 10rpx;
+  right: 42rpx;
+}
+.mobax{
+  position: absolute;
+  z-index: 997;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius:50%;
+  top: 60rpx;
+  right: 42rpx;
+}
+.moba1{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 997;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+.zhedang{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 998;
+  background: rgba(0, 0, 0, .6);
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+.emeng{
+  width: 567rpx;
+  height: 651rpx;
+}
+
+.moba2{
+  width:100%;
+  height:100%;
+  position:absolute;
+  z-index:997;
+}
+.zhedang1{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: rgba(0, 0, 0, .8);
+  overflow: hidden;
+}
+.pic{
+  width:100%;
+  height: 1333rpx;
+  position: absolute;
+}
+.challenge{
+  width: 526rpx;
+  height: 290rpx;
+  background: rgba(250, 250, 250, 0);
+  position: absolute;
+  margin-top: 540rpx;
+  margin-left: 112rpx;
+}
+.challenge span{
+  display: block;
+  text-align: center;
+  color: #fff;
+  font-size: 38rpx;
+}
+.challenge text{
+  display: block;
+  font-size: 28rpx;
+  font-weight: bold;
+  text-indent: 1.5em;
+  margin-top: 20rpx;
+}
+.huoqu{
+  width: 100%;
+  height: 100%;
+  position: absolute; 
+  background-color:#fff;
+  opacity: 0;
+  z-index: 999;
+}
+
+.challenge1{
+  width: 526rpx;
+  height: 350rpx;
+  background: rgba(250, 250, 250, 0);
+  position: absolute;
+  margin-top: 540rpx;
+  margin-left: 112rpx;
+}
+.challenge1 span{
+  display: block;
+  text-align: center;
+  color: #fff;
+  font-size: 40rpx;
+}
+.challenge1 text{
+  display: block;
+  font-size: 28rpx;
+  font-weight: bold;
+  text-indent: 1.5em;
+  margin-top: 24rpx;
+}
+.huoqu1{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color:#fff;
+  opacity: 0;
+  z-index: 999;
+}
+
+.tishi{
+  width: 600rpx;
+  background: #fff;
+}
+.tishi text{
+  margin-top: 35rpx;
+  font-size: 35rpx;
+  display: block;
+  text-align: center;
+}
+.tishi span{
+  margin-top: 35rpx;
+  font-size: 33rpx;
+  display: block;
+  text-align: center;
+  color: #B5B5B5;
+  padding:0 30rpx;
+}
+.queren{
+  width: 600rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 35rpx;
+  margin-top: 35rpx;
+  background: #fff;
+  color: #89DC77;
+  text-align: center;
+  border-top: 2rpx solid rgba(242,242,242,1);
+}

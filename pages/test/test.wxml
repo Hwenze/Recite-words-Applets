@@ -1,0 +1,16 @@
+<!--pages/test/test.wxml-->
+<view class='box' bindtap='jump'>
+  <view class='section'></view>
+  <view class='box_top'>
+    <image src='../../images/test.png'></image>
+  </view>
+  <view class='jc'>
+    <image src='../../images/djpm.png'></image>
+  </view>
+  <view class='gz' wx:if="{{windowHeight<690}}">
+    <p>规则:共20题,只需要选择你听到的正确发音或者看到的正确单词或词组选项即可</p>
+  </view>
+  <view class='gz1' wx:if="{{windowHeight>=690}}">
+    <p>规则:共20题,只需要选择你听到的正确发音或者看到的正确单词或词组选项即可</p>
+  </view>
+</view>

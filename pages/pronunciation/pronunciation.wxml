@@ -1,0 +1,197 @@
+<!--pages/pronunciation/pronunciation.wxml-->
+<view class='box'>
+  <image class="pic_background" src="../../images/bg1.jpg"></image>
+  <view class='section'>
+    <view class='sub' style='width:{{(currentPages+1)/test_list.length*100}}%'></view>
+  </view>
+
+  <!-- 听音辨词 -->
+  <view class='moba1'>
+    <view class='box_top' wx:if="{{windowHeight<690}}">
+      <view class='cs'>
+        <p wx:if="{{test_list[currentPages].type==0}}">听音辨词</p>
+        <p wx:if="{{test_list[currentPages].type==2}}">歌词猜猜猜</p>
+        <span>{{currentPages+1}}/20</span>
+      </view>
+    </view>
+
+    <view class='box_top1' wx:if="{{windowHeight>=690}}">
+      <view class='cs'>
+        <p wx:if="{{test_list[currentPages].type==0}}">听音辨词</p>
+        <p wx:if="{{test_list[currentPages].type==2}}">歌词猜猜猜</p>
+        <span>{{currentPages+1}}/20</span>
+      </view>
+    </view>
+
+    <view class='img' wx:if="{{test_list[currentPages].type==0}}">
+      <view class='xx'>
+          <text class='big_xx' style="font-family:rockwell; {{timeTop<=10?'display:none':''}}">*****</text>
+      </view>
+    </view>
+    <view class='img3' wx:if="{{test_list[currentPages].type==2}}">
+      <view class='xx3'>
+        <p style="font-family:rockwell;">{{test_list[currentPages].word_name}}</p>
+        <span style="font-family:rockwell;">{{test_list[currentPages].jiexi}}</span>
+      </view>
+    </view>
+
+    <view class="project1 {{test_list[currentPages].sel[0].isSel==1? 'green': ''}} {{test_list[currentPages].sel[0].isSel==0? 'red': ''}}" data-selindex='{{0}}' data-index="{{idx}}" data-dianji='{{test_list[currentPages].sel[0].isdianji}}' bindtap="tapnum">
+      <view class='option'>
+          <view class='option_box'></view>
+          <span>A</span>
+      </view>
+      <p style="font-family:rockwell;">{{test_list[currentPages].sel[0].value}}</p>
+    </view>
+
+    <view class="project2 {{test_list[currentPages].sel[1].isSel==1? 'green': ''}} {{test_list[currentPages].sel[1].isSel==0? 'red': ''}}" data-selindex='{{1}}' data-index="{{idx}}" data-dianji='{{test_list[currentPages].sel[1].isdianji}}' bindtap="tapnum">
+      <view class='option'>
+          <view class='option_box'></view>
+          <span>B</span>
+      </view>
+      <p style="font-family:rockwell;">{{test_list[currentPages].sel[1].value}}</p>
+    </view>
+
+    <view class="project3 {{test_list[currentPages].sel[2].isSel==1? 'green': ''}} {{test_list[currentPages].sel[2].isSel==0? 'red': ''}}" data-selindex='{{2}}' data-index="{{idx}}" data-dianji='{{test_list[currentPages].sel[2].isdianji}}' bindtap="tapnum">
+      <view class='option'>
+          <view class='option_box'></view>
+          <span>C</span>
+      </view>
+      <p style="font-family:rockwell;">{{test_list[currentPages].sel[2].value}}</p>
+    </view>
+
+    <view class="project4 {{test_list[currentPages].sel[3].isSel==1? 'green': ''}} {{test_list[currentPages].sel[3].isSel==0? 'red': ''}}" data-selindex='{{3}}' data-index="{{idx}}" data-dianji='{{test_list[currentPages].sel[3].isdianji}}' bindtap="tapnum">
+      <view class='option'>
+          <view class='option_box'></view>
+          <span>D</span>
+      </view>
+      <p style="font-family:rockwell;">{{test_list[currentPages].sel[3].value}}</p>
+    </view>
+
+    <view class='btn'>
+      <view class='big' style='opacity:{{opacity}}' data-no='{{no}}' bindtap="unclear">
+        <span>不清楚</span>
+      </view>
+
+      <view class='time'>
+        <span wx:if="{{timeCountDownTop>5}}">{{timeCountDownTop}}</span>
+        <span wx:elif="{{timeCountDownTop<=5}}" style="color:red">{{timeCountDownTop}}</span>
+      </view>
+
+      <view class='pic' disabled='{{disabled}}' bindtap="taplb">
+        <image src='../../images/lb.png'></image>
+      </view>
+    </view>
+  </view>
+
+  <!-- 看词辨音 -->
+  <!-- <view wx:if="{{item.type==1}}" class='moba2'>
+    <view class='box_top2'>
+      <view class='cs2'>
+        <p>看词辨音</p>
+        <span>{{idx+1}}/20</span>
+      </view>
+    </view>
+
+    <view class='img2'>
+      <view class='xx2'>
+        <span>{{item.word_name}}</span>
+      </view>
+    </view>
+
+    <view class='btn2'>
+      <view class='btn_sm2' data-audio='{{item.sel[0]}}'>
+        <image class="{{item.sel[0].isSel==1? 'animte': ''}} {{item.sel[0].isSel==0? 'animte': ''}}{{item.sel[0].isaudioplay? 'playing':''}}" data-selindex='{{0}}' data-index="{{idx}}" data-dianji='{{item.sel[0].isdianji}}' bindtap="tapnum" src='../../images/a.png'></image>
+      </view>
+      <view class='btn_sm2' data-audio='{{item.sel[1]}}'>
+        <image class="{{item.sel[1].isSel==1? 'animte': ''}} {{item.sel[1].isSel==0? 'animte': ''}}{{item.sel[1].isaudioplay? 'playing':''}}" data-selindex='{{1}}' data-index="{{idx}}" data-dianji='{{item.sel[1].isdianji}}' bindtap="tapnum" src='../../images/b.png'></image>
+      </view>
+      <view class='btn_sm2' data-audio='{{item.sel[2]}}'>
+        <image class="{{item.sel[2].isSel==1? 'animte': ''}} {{item.sel[2].isSel==0? 'animte': ''}}{{item.sel[2].isaudioplay? 'playing':''}}" data-selindex='{{2}}' data-index="{{idx}}" data-dianji='{{item.sel[2].isdianji}}' bindtap="tapnum" src='../../images/c.png'></image>
+      </view>
+      <view class='btn_sm2'>
+        <image data-no='{{no}}' bindtap="unclear" src='../../images/d.png'></image>
+      </view>
+    </view>
+
+    <view class='fenge2'>
+
+      <view class='wenzi2'>
+        <span>请选择你听到的正确的发音</span>
+      </view>
+
+    </view>
+
+    <view class='jishi2'>
+
+      <view class='time2'>
+        <span>{{timeCountDownTop}}</span>
+      </view>
+
+    </view>
+  </view> -->
+
+  <!-- 猜歌词 -->
+  <!-- <view wx:if="{{item.type==2}}" class='moba3'>
+    <view class='box_top3'>
+      <view class='cs3'>
+        <p>歌词猜猜猜</p>
+        <span>{{idx+1}}/20</span>
+      </view>
+    </view>
+
+    <view class='img3'>
+      <view class='xx3'>
+        <p style="font-family:rockwell;">{{item.word_name}}</p>
+        <span style="font-family:rockwell;">{{item.jiexi}}</span>
+      </view>
+    </view>
+
+    <view class="xuanze1 {{item.sel[0].isSel==1? 'green': ''}} {{item.sel[0].isSel==0? 'red': ''}}" data-selindex='{{0}}' data-index="{{idx}}" data-dianji='{{item.sel[0].isdianji}}' bindtap="tapnum">
+      <view class='option'>
+          <view class='option_box'></view>
+          <span>A</span>
+      </view>
+      <p style="font-family:rockwell;">{{item.sel[0].value}}</p>
+    </view>
+
+    <view class="xuanze2 {{item.sel[1].isSel==1? 'green': ''}} {{item.sel[1].isSel==0? 'red': ''}}" data-selindex='{{1}}' data-index="{{idx}}" data-dianji='{{item.sel[1].isdianji}}' bindtap="tapnum">
+      <view class='option'>
+          <view class='option_box'></view>
+          <span>B</span>
+      </view>
+      <p style="font-family:rockwell;">{{item.sel[1].value}}</p>
+    </view>
+
+    <view class="xuanze3 {{item.sel[2].isSel==1? 'green': ''}} {{item.sel[2].isSel==0? 'red': ''}}" data-selindex='{{2}}' data-index="{{idx}}" data-dianji='{{item.sel[2].isdianji}}' bindtap="tapnum">
+      <view class='option'>
+          <view class='option_box'></view>
+          <span>C</span>
+      </view>
+      <p style="font-family:rockwell;">{{item.sel[2].value}}</p>
+    </view>
+
+    <view class="xuanze4 {{item.sel[3].isSel==1? 'green': ''}} {{item.sel[3].isSel==0? 'red': ''}}" data-selindex='{{3}}' data-index="{{idx}}" data-dianji='{{item.sel[3].isdianji}}' bindtap="tapnum">
+      <view class='option'>
+          <view class='option_box'></view>
+          <span>D</span>
+      </view>
+      <p style="font-family:rockwell;">{{item.sel[3].value}}</p>
+    </view>
+
+    <view class='btn3'>
+      <view class='big3' style='opacity:{{opacity}}' data-no='{{no}}' bindtap="unclear">
+        <span>不清楚</span>
+      </view>
+
+      <view class='time3'>
+        <span wx:if="{{timeCountDownTop>5}}">{{timeCountDownTop}}</span>
+        <span wx:elif="{{timeCountDownTop<=5}}" style="color:red">{{timeCountDownTop}}</span>
+      </view>
+
+      <view class='pic3' bindtap="taplb">
+        <image src='../../images/lb.png'></image>
+      </view>
+    </view>
+  </view> -->
+
+</view>

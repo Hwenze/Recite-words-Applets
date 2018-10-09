@@ -1,0 +1,88 @@
+<!--pages/clock/clock.wxml-->
+<view class='box'>
+  <image class="pic_background" src="../../images/clockbg.png"></image>
+
+  <view class='section'></view>
+
+  <image class="pic_cj" wx:if="{{windowHeight<666}}" src="../../images/clock.png"></image>
+
+  <image class="pic_cj2" wx:if="{{windowHeight>=666 && windowHeight<690}}" src="../../images/clock.png"></image>
+
+  <image class="pic_cj1" wx:if="{{windowHeight>=690}}" src="../../images/clock.png"></image>
+
+  <view class='num' wx:if="{{windowHeight<666}}">
+    <span style="font-family:rockwell;">{{count}}</span>
+    <span>/</span>
+    <span style="font-family:rockwell;">{{total_count}}</span>
+  </view>
+
+  <view class='num2' wx:if="{{windowHeight>=666 && windowHeight<690}}">
+    <span style="font-family:rockwell;">{{count}}</span>
+    <span>/</span>
+    <span style="font-family:rockwell;">{{total_count}}</span>
+  </view>
+
+  <view class='num1' wx:if="{{windowHeight>=690}}">
+    <span style="font-family:rockwell;">{{count}}</span>
+    <span>/</span>
+    <span style="font-family:rockwell;">{{total_count}}</span>
+  </view>
+
+  <view class='combo' wx:if="{{windowHeight<666}}">
+    <span style="font-family:rockwell;">{{combo}}</span>
+  </view>
+
+  <view class='combo2' wx:if="{{windowHeight>=666 && windowHeight<690}}">
+    <span style="font-family:rockwell;">{{combo}}</span>
+  </view>
+
+  <view class='combo1' wx:if="{{windowHeight>=690}}">
+    <span style="font-family:rockwell;">{{combo}}</span>
+  </view>
+
+  <view class='day' wx:if="{{windowHeight<666}}">
+    <span style="font-family:rockwell;">{{word_day}}</span>
+    <span style="font-family:rockwell;">/{{day_num}}</span>
+  </view>
+
+  <view class='day2' wx:if="{{windowHeight>=666 && windowHeight<690}}">
+    <span style="font-family:rockwell;">{{word_day}}</span>
+    <span style="font-family:rockwell;">/{{day_num}}</span>
+  </view>
+
+  <view class='day1' wx:if="{{windowHeight>=690}}">
+    <span style="font-family:rockwell;">{{word_day}}</span>
+    <span style="font-family:rockwell;">/{{day_num}}</span>
+  </view>
+
+  <view class='user' wx:if="{{windowHeight<666}}">
+    <view class='uesr_pic'>
+      <image src='{{avatar}}'></image>
+    </view>
+    <span>{{userName}}</span>
+  </view>
+
+  <view class='user2' wx:if="{{windowHeight>=666 && windowHeight<690}}">
+    <view class='uesr_pic'>
+      <image src='{{avatar}}'></image>
+    </view>
+    <span>{{userName}}</span>
+  </view>
+
+  <view class='user1' wx:if="{{windowHeight>=690}}">
+    <view class='uesr_pic'>
+      <image src='{{avatar}}'></image>
+    </view>
+    <span>{{userName}}</span>
+  </view>
+
+  <button open-type='share' class='share' wx:if="{{windowHeight<666}}"></button>
+  <image class='share_img' src='../../images/share.png' wx:if="{{windowHeight<666}}"></image>
+
+  <button open-type='share' class='share2' wx:if="{{windowHeight>=666 && windowHeight<690}}"></button>
+  <image class='share_img2' src='../../images/share.png' wx:if="{{windowHeight>=666 && windowHeight<690}}"></image>
+
+  <button open-type='share' class='share1' wx:if="{{windowHeight>=690}}"></button>
+  <image class='share_img1' src='../../images/share.png' wx:if="{{windowHeight>=690}}"></image>
+  
+</view>

@@ -1,0 +1,53 @@
+<!--pages/result/result.wxml-->
+<view class='box'>
+
+  <image class="pic_background" src="../../images/resultbg.jpg"></image>
+
+  <view class='section'></view>
+
+  <image class="pic_cj" wx:if="{{windowHeight<690}}" src="../../images/result.png"></image>
+
+  <image class="pic_cj1" wx:if="{{windowHeight>=690}}" src="../../images/result.png"></image>
+
+  <view class='num' wx:if="{{windowHeight<690}}">
+    <span>{{fenshu}}</span>
+  </view>
+
+  <view class='num1' wx:if="{{windowHeight>=690}}">
+    <span>{{fenshu}}</span>
+  </view>
+
+  <view class='level' wx:if="{{windowHeight<690}}">
+    <view class='level_sm'>
+      <span>{{fenshu}}级别：{{jieshi}}</span>
+    </view>
+  </view>
+
+  <view class='level1' wx:if="{{windowHeight>=690}}">
+    <view class='level_sm'>
+      <span>{{fenshu}}级别：{{jieshi}}</span>
+    </view>
+  </view>
+
+  <view class='user' wx:if="{{windowHeight<690}}">
+    <view class='uesr_pic'>
+      <image src='{{avatar}}'></image>
+    </view>
+    <span>{{truename}}</span>
+  </view>
+
+  <view class='user1' wx:if="{{windowHeight>=690}}">
+    <view class='uesr_pic'>
+      <image src='{{avatar}}'></image>
+    </view>
+    <span>{{truename}}</span>
+  </view>
+
+  <button open-type='share' wx:if="{{windowHeight<690}}" class='share'></button>
+  <image class='share_img' wx:if="{{windowHeight<690}}" src='../../images/share.png'></image>
+
+  <button open-type='share' wx:if="{{windowHeight>=690}}" class='share1'></button>
+  <image class='share_img1' wx:if="{{windowHeight>=690}}" src='../../images/share.png'></image>
+  
+</view>
+

@@ -1,0 +1,108 @@
+<!--index.wxml-->
+
+<view class='box'>
+<!-- 全面屏 -->
+<view class='comprehensive' wx:if="{{windowHeight>=690}}"></view>
+  <!-- 头部 -->
+  <view class='box_top'>
+    <view class='news'>
+      <view class='xuanze' bindtap='books'>
+        <image src='../../images/danci.png'></image>
+        <text>单词书</text>
+      </view>
+      <view class='logo' bindtap="introduce">
+        <image src='{{photo}}'></image>
+      </view>
+      <view class='tiku' data-id='0' bindtap="jump" wx:if="{{windowHeight<690}}">
+        <view class='ciku'>我的噩梦词库</view>
+        <view class='jieshi'>!</view>
+        <image src='../../images/tiku.png'></image>
+        <view class='yy'>{{count}}</view>
+      </view>
+      <view class='tiku1' data-id='0' bindtap="jump" wx:if="{{windowHeight>=690}}">
+        <view class='ciku'>我的噩梦词库</view>
+        <view class='jieshi'>!</view>
+        <image src='../../images/tiku.png'></image>
+        <view class='yy'>{{count}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 中间轮播 -->
+  <view class='guodu'>
+    <image src='../../images/jianbian.png'></image>
+    <view class='lb'>
+      <swiper class="swiper_container" autoplay="true" circular="true" interval="3000">
+        <block wx:for="{{msgList}}">
+            <swiper-item>
+              <view class="swiper_item">{{item.content}}</view>
+            </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <!-- 按钮 -->
+  <view class="{{windowHeight>690?'pi':'list'}}">
+    <ul>
+    <!-- 发音大检测 -->
+      <li><image src='../../images/fayin.png' bindtap="pronunciation"></image></li>
+      <!-- 核心 -->
+      <li wx:if="{{fiften_word!='100%'}}">
+        <image src='{{image_7}}' bindtap="wait"></image>
+      </li>
+      <li wx:if="{{fiften_word=='100%'}}">
+        <image wx:if="{{modular_id!=2}}" src="{{image_5}}" bindtap="{{fifth_word=='100%'?'frame2':'jump3'}}" data-c_id="2"></image>
+        <image wx:if="{{modular_id==2}}" src="{{image_6}}" bindtap="{{fifth_word=='100%'?'frame2':'jump3'}}" data-c_id="2"></image>
+      </li>
+      <!-- 口语 -->
+      <li wx:if="{{modular_id!=0}}"><image src="{{image_1}}" bindtap="{{ten_word=='100%'?'frame0':'jump1'}}" data-c_id="0"></image></li>
+      <li wx:if="{{modular_id==0}}"><image src="{{image_2}}" bindtap="{{ten_word=='100%'?'frame0':'jump1'}}" data-c_id="0"></image></li>
+      <!-- 听力 -->
+      <li wx:if="{{modular_id!=1}}"><image src="{{image_3}}" bindtap="{{fiften_word=='100%'?'frame1':'jump2'}}" data-c_id="1"></image></li>
+      <li wx:if="{{modular_id==1}}"><image src="{{image_4}}" bindtap="{{fiften_word=='100%'?'frame1':'jump2'}}" data-c_id="1"></image></li>
+      <!-- 开始继续 -->
+      <li><image src="{{modular_id == 0 || modular_id== 1 || modular_id== 2?'../../images/jixu.png':'../../images/ksxx.png'}}" bindtap="{{modular_id == 0 || modular_id== 1 || modular_id== 2 ?'jump4':''}}"></image></li>
+    </ul>
+  </view>
+</view>
+
+<!-- 模板 -->
+<view class='moba' bindtap="moba" wx:if="{{windowHeight<690}}"></view>
+<view class='mobax' bindtap="moba" wx:if="{{windowHeight>=690}}"></view>
+<view class='moba1' style='display:{{moba1}}' bindtap="moba1">
+  <view class='zhedang'>
+    <image class='emeng' src='../../images/emeng.png'></image>
+  </view>
+</view>
+<view class='moba2' wx:if='{{!user_status}}'>
+  <view class='zhedang1'>
+    <image class='pic' src='../../images/shouquan.png'></image>
+    <view class='challenge' wx:if="{{windowHeight<690}}">
+      <span>这一次，要听懂更多</span>
+      <text>· 记单词很多却发音混淆不清?</text>
+      <text>· 终于鼓起勇气想参加四六级口试?</text>
+      <text>· 还没有找到可以检验发音的神器?</text>
+      <text>· 好多好多单词看得懂却听不懂?</text>
+    </view>
+    <view class='challenge1' wx:if="{{windowHeight>=690}}">
+      <span>这一次，要听懂更多</span>
+      <text>· 记单词很多却发音混淆不清?</text>
+      <text>· 终于鼓起勇气想参加四六级口试?</text>
+      <text>· 还没有找到可以检验发音的神器?</text>
+      <text>· 好多好多单词看得懂却听不懂?</text>
+    </view>
+
+    <button class='huoqu' wx:if="{{windowHeight<690}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"></button>
+    <button class='huoqu1' wx:if="{{windowHeight>=690}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"></button>
+  </view>
+</view>
+
+
+<view class='moba3' style='display:{{moba3}}'>
+  <view class='zhedang'>
+    <view class='tishi'>
+      <text>提示</text>
+      <span>{{tishi}}</span>
+      <view class='queren' bindtap="moba3">确定</view>
+    </view>
+  </view>
+</view>

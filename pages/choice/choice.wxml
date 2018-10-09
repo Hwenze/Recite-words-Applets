@@ -1,0 +1,27 @@
+<!--pages/choice/choice.wxml-->
+<view class='section'></view>
+<view class='box'>
+  <block wx:for='{{books}}'>
+    <view class='sm_box'>
+        <view class='nr'>
+          <view class='grade'>
+            <image src='{{item.cover}}'></image>
+          </view>
+          <view class='complete'>
+            <span>{{item.title}}</span>
+            <span>{{item.moduleone}} 已完成{{item.process.ten_word}}</span>
+            <span>{{item.moduletwo}} 已完成{{item.process.fiften_word}}</span>
+            <span>{{item.modulethree}} 已完成{{item.process.fifth_word}}</span>
+          </view>
+          <view class='choice' style="{{item.sel==1?'opacity: .4':''}}" data-id='{{item.id}}' catchtap='tabnum'>
+            <text wx:if="{{item.sel==1}}">正在学习</text>
+            <text wx:else>{{item.id == id?'正在学习':'选择此书'}}</text>
+          </view>
+          <!-- 蒙版 -->
+          <view wx:if="{{item.if_show==0}}" class="unlock">
+            <text class="soon">即将推出</text>
+          </view>
+        </view>
+    </view>
+  </block> 
+</view>

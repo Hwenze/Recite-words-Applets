@@ -1,0 +1,44 @@
+<!--pages/nightmare/nightmare.wxml-->
+<view class='box-top'>
+  <view class='xl'>
+    <image src='../../images/xl.png'></image>
+    <picker bindchange="bindPickerChange" value="{{books_index}}" range-key='{{"title"}}' range="{{books}}">
+      <view class="picker">
+        当前选择：{{books[books_index].title}}
+      </view>
+    </picker>
+    <span style="font-family:rockwell;">{{name}}</span>
+  </view>
+  <view class='sl'>
+    <span style="font-family:rockwell;">{{count}}个</span>
+  </view>
+  <view class='ch'>
+    <span style="font-family:rockwell;"  bindtap='extinct'>已消灭词汇</span>
+  </view>
+</view>
+<!-- 内容 -->
+<view class='nr'>
+  <block wx:for='{{list}}'>
+    <ul>
+      <li data-id='{{item.words.id}}'>
+        <view class='vocabulary'>
+          <p style="font-family:rockwell;">{{item.words.word_name}}</p>
+        </view>
+        <view class='peas'>
+          <image wx:if="{{item.color_status==1}}" class="{{item.error_num == 1 ? 'difficulty1':''}} {{item.error_num == 2 ? 'difficulty2':''}} {{item.error_num >= 3 ? 'difficulty3':''}}" src="{{item.error_num == 1 ? '../../images/hdd1.png':''}} {{item.error_num == 2 ? '../../images/hdd2.png':''}} {{item.error_num >= 3 ? '../../images/hdd3.png':''}}"></image>
+          <image wx:if="{{item.color_status==2}}" class="{{item.error_num == 1 ? 'difficulty1':''}} {{item.error_num == 2 ? 'difficulty2':''}} {{item.error_num >= 3 ? 'difficulty3':''}}" src="{{item.error_num == 1 ? '../../images/redd1.png':''}} {{item.error_num == 2 ? '../../images/redd2.png':''}} {{item.error_num >= 3 ? '../../images/redd3.png':''}}"></image>
+        </view>
+        <view class='explain'>
+          <p style="font-family:rockwell;">{{item.words.analyze}}</p>
+        </view>
+      </li>
+    </ul>
+  </block>
+  <view class='kong' style="{{count==0?'':'display:none;'}}">
+    <image src='../../images/kong.png'></image>
+  </view>
+</view>
+<!-- 底部 -->
+<view class='db' style="{{count==0?'display:none;':''}}">
+  <image bindtap='jump' data-id="{{id}}" src='../../images/xiaomie.png'></image>
+</view>

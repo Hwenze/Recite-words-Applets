@@ -1,0 +1,106 @@
+/* pages/choice/choice.wxss */
+page{
+  height: 100%;
+  background: #F8F8F8;
+  background-size:100% 100%;
+}
+.section{
+  position: relative;
+  height: 2px;
+  background: #fff;
+}
+.box{
+  padding: 0 3%;
+}
+.sm_box{
+  position: relative;
+}
+.nr{
+  position: relative;
+  width: 100%;
+  height: 210rpx;
+  margin-top:45rpx; 
+  margin-bottom: 10rpx;
+  background: #FFD200;
+  border-radius:100rpx; 
+  box-shadow: -2px 2px 2px #C2C2C2;
+}
+.grade{
+  width: 170rpx;
+  height: 170rpx;
+  border-radius:50%;
+  margin-top:20rpx; 
+  margin-left: 25rpx;
+  float: left;
+  overflow: hidden;
+}
+.grade image{
+  width: 170rpx;
+  height: 170rpx;
+  border-radius:50%;
+}
+.complete{
+  width: 290rpx;
+  float: left;
+  margin-left: 10rpx;
+  font-size: 25rpx;
+}
+.complete span{
+  display: block;
+  color: #6B6962;
+  margin-top: 6rpx;
+  border-bottom:1px solid rgba(250, 250, 250, .6); 
+  text-indent: .5em;
+}
+.complete span:nth-child(1){
+  border:0;
+  text-align: center;
+  font-size: 35rpx;
+  color: #000;
+  margin-top: 18rpx;
+}
+.complete span:nth-child(2){
+  margin-top: 6rpx;
+}
+.complete span:nth-child(4){
+  border:0;
+}
+.choice{
+  width: 166rpx;
+  height: 166rpx;
+  border-radius:50%;
+  border: 4rpx solid #000;
+  background: #FFD200; 
+  float: right;
+  margin-top:20rpx; 
+  margin-right: 25rpx;
+}
+.choice text{
+  line-height: 166rpx;
+  font-size: 35rpx;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 蒙版 */
+.unlock{
+  width: 100%;
+  height: 210rpx;
+  border-radius:100rpx;
+  background: #fff;
+  opacity: .7;
+}
+.soon{
+  width: 180rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-top: 74rpx;
+  margin-left: 260rpx;
+  position: absolute;
+  display: block;
+  border: 2rpx solid #000;
+  transform:rotateZ(-30deg);
+  text-align: center;
+}

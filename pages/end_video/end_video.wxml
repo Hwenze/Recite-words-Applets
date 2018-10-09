@@ -1,0 +1,7 @@
+<!--pages/end_video/end_video.wxml-->
+<view class='box'>
+  <video class="myVideo" src="{{video}}" autoplay="true" direction="90" show-play-btn="flase" show-center-play-btn="flase" enable-progress-gesture="flase" controls="flase" objectFit="cover">
+  <cover-view class='jump' scroll-top='30' bindtap='jump'>跳过</cover-view>
+  </video>
+</view>
+

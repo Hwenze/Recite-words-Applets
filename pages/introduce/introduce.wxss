@@ -1,0 +1,63 @@
+/* pages/introduce/introduce.wxss */
+@import "../../wxParse/wxParse.wxss";
+.box{
+  width: 100%;
+}
+.section{
+  position: relative;
+  height: 2px;
+  background: #fff;
+}
+.wxParse-img{
+  width: 100% !important;
+}
+
+.box_button{
+  width: 100%;
+  height: 500rpx;
+  background: #FFD200;
+  margin-top: -10px;
+}
+.box_button view{
+  margin-top: 20rpx;
+  margin-left: 76rpx;
+  width: 260rpx;
+  height: 260rpx;
+  border: 2px solid #000;
+  border-radius:50%; 
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bbox{
+  width: 260rpx;
+  height: 260rpx;
+  border-radius:50%;
+  position: absolute;
+  z-index: 999;
+  opacity: 0;
+  background-color: rgba(250, 250, 250, 0);
+}
+button{
+  display:block;
+  padding-left:0px;
+  padding-right:0px;
+  line-height:1px;
+  background-color: rgba(255,255,255,0);
+  -webkit-tap-highlight-color:rgba(250, 250, 250, 0);
+  opacity: 0;
+}
+
+.box_button view text{
+  display: block;
+  width: 75px;
+  margin-left: 18rpx;
+}
+.box_button image{
+  width: 80%;
+  height: 100rpx;
+  margin-top: 70rpx;
+  margin-left: 10%;
+  margin-right: 10%;
+}

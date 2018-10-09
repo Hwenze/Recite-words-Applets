@@ -1,0 +1,105 @@
+<!--pages/subject/subject.wxml-->
+<view class='box'>
+
+  <image class="pic_background" style='display:{{combo}}' src='../../images/combo.png'></image>
+
+  <view class='section'>
+    <view class='sub' style="width:{{(currentPages+1)/test_list.length*100}}%; background:{{transformation==true?'#FFD200':'red'}};"></view>
+  </view>
+
+  <!-- 掌握 -->
+  <view class='box_top' wx:if="{{windowHeight<690}}">
+    <view class='sj'>
+      <p>已掌握单词</p>
+      <span style="font-family:rockwell;">{{count}}</span>
+      <view class='day' style="font-family:rockwell;">DAY {{word_day}}</view>
+    </view>
+  </view>
+
+  <view class='box_top1' wx:if="{{windowHeight>=690}}">
+    <view class='sj'>
+      <p>已掌握单词</p>
+      <span style="font-family:rockwell;">{{count}}</span>
+      <view class='day' style="font-family:rockwell;">DAY {{word_day}}</view>
+    </view>
+  </view>
+
+  <!-- 连击 -->
+  <view class='combo' wx:if="{{carom>1}}">
+    <text style='display:{{lianji}}'>combox{{carom-1}}</text>
+  </view>
+
+  <!-- 单词 -->
+  <view class='img'>
+    <view class='dd'>
+      <image wx:if="{{test_list[currentPages].is_error==1}}" src='../../images/redd1.png'></image>
+    </view>
+    <view class='xx' wx:if="{{c_id==0||c_id==1}}">
+      <text class='big_xx' style="font-family:rockwell; {{timeTop<=10?'display:none':''}}">*****</text>
+      <span class="title" style="font-family:rockwell;{{timeTop>10?'display:none':''}}">{{test_list[currentPages].word_name}}</span>
+      <view class='yinbiao'>
+        <text class="biao" style="{{timeTop>10?'display:none':''}}">{{test_list[currentPages].word_biao}}</text>
+      </view>
+    </view>
+
+    <view class='xx' wx:if="{{c_id==2}}">
+      <span class="title" style="font-family:rockwell;">{{test_list[currentPages].word_name}}</span>
+      <view class='yinbiao'>
+        <text class="biao">{{test_list[currentPages].word_biao}}</text>
+      </view>
+    </view>
+    
+  </view>
+
+  <!-- 选项 -->
+  <view class="project1 {{test_list[currentPages].sel[0].isSel==1? 'green': ''}} {{test_list[currentPages].sel[0].isSel==0? 'red': ''}}" data-selindex='0' data-dianji='{{test_list[currentPages].sel[0].isdianji}}' bindtap="tapnum">
+    <view class='option'>
+        <view class='option_box'></view>
+        <span>A</span>
+    </view>
+    <p style="font-family:rockwell;{{timeCountDownTop<=15?'display:block':''}}">{{test_list[currentPages].sel[0].value}}</p>
+  </view>
+
+  <view class="project2 {{test_list[currentPages].sel[1].isSel==1? 'green': ''}} {{test_list[currentPages].sel[1].isSel==0? 'red': ''}}" data-selindex='1' data-dianji='{{test_list[currentPages].sel[1].isdianji}}' bindtap="tapnum">
+    <view class='option'>
+        <view class='option_box'></view>
+        <span>B</span>
+    </view>
+    <p style="font-family:rockwell;{{timeCountDownTop<=15?'display:block':''}}">{{test_list[currentPages].sel[1].value}}</p>
+  </view>
+
+  <view class="project3 {{test_list[currentPages].sel[2].isSel==1? 'green': ''}} {{test_list[currentPages].sel[2].isSel==0? 'red': ''}}" data-selindex='2' data-dianji='{{test_list[currentPages].sel[2].isdianji}}' bindtap="tapnum">
+    <view class='option'>
+      <view class='option_box'></view>
+      <span>C</span>
+    </view>
+    <p style="font-family:rockwell;{{timeCountDownTop<=15?'display:block':''}}">{{test_list[currentPages].sel[2].value}}</p>
+  </view>
+  
+  <view class="project4 {{test_list[currentPages].sel[3].isSel==1? 'green': ''}} {{test_list[currentPages].sel[3].isSel==0? 'red': ''}}" data-selindex='3' data-dianji='{{test_list[currentPages].sel[3].isdianji}}' bindtap="tapnum">
+    <view class='option'>
+        <view class='option_box'></view>
+        <span>D</span>
+    </view>
+    <p style="font-family:rockwell;{{timeCountDownTop<=15?'display:block':''}}">{{test_list[currentPages].sel[3].value}}</p>
+  </view>
+
+
+  <view class='btn'>
+    <!-- 不清楚 -->
+    <view class='big' style='opacity:{{opacityno}}' data-no='{{no}}' bindtap='unclear'>
+      <span>不清楚</span>
+    </view>
+    <!-- 计时 -->
+    <view class='time'>
+      <span wx:if="{{timeCountDownTop>10}}">{{timeCountDownTop}}</span>
+      <span wx:elif="{{timeCountDownTop<=10&&timeCountDownTop>5}}" style="color:#FFD200">{{timeCountDownTop}}</span>
+      <span wx:elif="{{timeCountDownTop<=5}}" style="color:red">{{timeCountDownTop}}</span>
+    </view>
+    <!-- 语音 -->
+    <view class='pic' bindtap="taplbtime">
+      <image src='../../images/lb.png'></image>
+    </view>
+  </view>
+
+</view>
